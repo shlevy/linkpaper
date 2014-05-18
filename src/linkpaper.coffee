@@ -150,12 +150,14 @@ findPort = ->
 
   server.once 'listening', authenticate
 
-googleapis.discover('drive', 'v2').execute (err, c) ->
-  if err
-    console.error "Error while loading the google drive API", err
-    process.exit 4
-  client = c
-  ready = authClient?
-  maybeUpdate()
+googleapis.discover('drive', 'v2')
+  .withOpts(cache: path: "#{process.env['HOME']}/.linkpaper")
+  .execute (err, c) ->
+    if err
+      console.error "Error while loading the google drive API", err
+      process.exit 4
+    client = c
+    ready = authClient?
+    maybeUpdate()
 
 findPort()
