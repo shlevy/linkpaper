@@ -1,6 +1,6 @@
 {
   "name": "linkpaper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically sync a local file to a google drive file",
   "repository": {
     "type": "git",
