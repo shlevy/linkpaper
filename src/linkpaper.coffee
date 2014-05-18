@@ -33,7 +33,7 @@ update = do ->
   id = null
   -> fs.readFile process.argv[2], encoding: 'utf8', (err, data) ->
     if err?
-      if err.errno isnt 'ENOENT'
+      if err.errno is 'ENOENT'
         console.error "Error reading #{process.argv[2]}", err
         process.exit 5
       ready = true
