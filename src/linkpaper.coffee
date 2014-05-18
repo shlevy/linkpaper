@@ -32,6 +32,8 @@ client = null
 update = do ->
   id = null
   -> fs.readFile process.argv[2], encoding: 'utf8', (err, data) ->
+    if data is ""
+      data = " "
     if err?
       if err.errno is 'ENOENT'
         console.error "Error reading #{process.argv[2]}", err
