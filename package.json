@@ -1,0 +1,28 @@
+{
+  "name": "linkpaper",
+  "version": "1.0.0",
+  "description": "Automatically sync a local file to a google drive file",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shlevy/linkpaper.git"
+  },
+  "author": {
+    "name": "Shea Levy",
+    "email": "shea@shealevy.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shlevy/linkpaper/issues"
+  },
+  "homepage": "https://github.com/shlevy/linkpaper",
+  "scripts": {
+    "prepublish": "coffee --bare --compile --output lib src/*.coffee"
+  },
+  "bin": { "linkpaper": "lib/main.js" },
+  "dependencies": {
+    "googleapis": "0.7.0"
+  },
+  "devDependencies": {
+    "coffee-script": ">=1.7.1 <2.0.0"
+  }
+}
